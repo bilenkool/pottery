@@ -21,23 +21,25 @@ import pathlib
 from setuptools import find_packages
 from setuptools import setup
 
-import pottery
-
 
 _package_dir = pathlib.Path(__file__).parent
 _long_description = (_package_dir / 'README.md').read_text()
 
 
 setup(
-    name=pottery.__name__,
-    version=pottery.__version__,
-    description=pottery.__description__,
+    name='pottery',
+    version='3.0.0',
+    description="""Redis is awesome, but Redis commands are not always intuitive.  Pottery is a
+Pythonic way to access Redis.  If you know how to use Python dicts, then you
+already know how to use Pottery.  Pottery is useful for accessing Redis more
+easily, and also for implementing microservice resilience patterns; and it has
+been battle tested in production at scale.""",
     long_description=_long_description,
     long_description_content_type='text/markdown',
-    url=pottery.__url__,
-    author=pottery.__author__,
-    author_email=pottery.__author_email__,
-    license=pottery.__license__,
+    url='https://github.com/brainix/pottery',
+    author='Rajiv Bakulesh Shah',
+    author_email='brainix@gmail.com',
+    license='Apache 2.0',
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Intended Audience :: Developers',
@@ -54,7 +56,7 @@ setup(
         'Framework :: AsyncIO',
         'Typing :: Typed',
     ],
-    keywords=pottery.__keywords__,
+    keywords='Redis client persistent storage',
     python_requires='>=3.7, <4',
     install_requires=('redis>=4.2.0rc1, <5', 'mmh3', 'typing_extensions'),
     extras_require={},
